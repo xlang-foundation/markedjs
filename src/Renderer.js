@@ -29,7 +29,15 @@ export class Renderer {
         + (escaped ? code : escape(code, true))
         + '</code></pre>\n';
     }
-
+    if (lang == 'xlang') {
+      return '<div style="width:100%;height:80%;">'
+        + '<p class="code_embed">'
+        + (escaped ? code : escape(code, true))
+        + '</p>'
+        + '<code-block style = "width:100%; height:100%;">'
+        + '</code-block>'
+      +'</div>\n';
+    }
     return '<pre><code class="'
       + this.options.langPrefix
       + escape(lang)
